@@ -1,0 +1,10 @@
+.Profile__Rectangle {
+    min-width: 24px;
+    max-height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+    margin-top: 16px;
+    border: 1px solid #FFFFFF;
+}
