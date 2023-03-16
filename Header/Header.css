@@ -1,0 +1,8 @@
+.Header {
+    max-width: 880px;
+    min-height: 74px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 45px;
+}
