@@ -16,3 +16,5 @@
 @import url(../blocks/Elements/__blok/Elements__blok.css);
 @import url(../blocks/Elements/__text/Elements__text.css);
 @import url(../blocks/Elements/__image/Elements__image.css);
+@import url(../blocks/Footer/Footer.css);
+@import url(../blocks/Footer/__text/Footer__text.css);
