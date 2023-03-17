@@ -1,0 +1,38 @@
+.popup {
+  width: 100%;
+  min-height: 142%;
+  display: none;
+  justify-content: center;
+  align-items: start;
+  position: absolute;
+  z-index: 0;
+}
+
+.popup:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000000;
+  opacity: 0.5;
+}
+
+.popup_opened {
+  display: ;
+ 
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .popup {
+    min-height: 186%;
+   }
+}
+
+  @media screen and (max-width: 767px) {
+  .popup {
+     padding-top: 123px;
+     min-height: 325%;
+    }
+  }
