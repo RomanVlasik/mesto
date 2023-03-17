@@ -1,0 +1,25 @@
+.Profile__AddButton {
+    min-width: 146px;
+    min-height: 45px;
+    border: 2px solid #FFFFFF;
+    border-radius: 2px;
+    margin-left: 244px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .Profile__AddButton {
+        margin-left: 80px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .Profile__AddButton {
+        min-width: 280px;
+        min-height: 47px;
+        margin-left: 0px;
+        margin-top: 16px;
+    }
+}
