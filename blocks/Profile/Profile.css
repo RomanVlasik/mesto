@@ -5,3 +5,17 @@
     margin-top: 40px;
     align-items: center;
 }
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .Profile {
+        max-width: 720px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .Profile {
+        max-width: 320px;
+        margin-top: 42px;
+        flex-direction: column;
+    }
+}
