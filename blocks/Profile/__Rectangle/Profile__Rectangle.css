@@ -1,0 +1,23 @@
+.Profile__Rectangle {
+    min-width: 22px;
+    max-height: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 21px;
+    margin-top: 17px;
+    border: 1px solid #FFFFFF;
+}
+
+.Profile__Rectangle:hover {
+    opacity: 0.6;
+}
+
+@media screen and (max-width: 767px) {
+    .Profile__Rectangle {
+        min-width: 16px;
+        max-height: 16px;
+        margin-left: 13px;
+        margin-top: 8px;
+    }
+}
