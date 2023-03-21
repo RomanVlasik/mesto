@@ -1,4 +1,4 @@
-const imge = document.querySelector('.Profile__Rectangle');
+const imge = document.querySelector('.profile__rectangle');
 imge.addEventListener('click', function () {
     document.getElementById("myForm").style.display = "flex";
   });
