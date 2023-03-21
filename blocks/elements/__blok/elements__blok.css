@@ -1,0 +1,9 @@
+.elements__blok {
+    min-width: 246px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+    padding-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+}
