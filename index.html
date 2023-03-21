@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>Сдача проекта Mesto: адаптивная вёрстка</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="description" content="Сдача проекта Mesto: адаптивная вёрстка">
+    <meta name="keywords" content="Проектная работа,Проектная работа номер 4,Проектная работа Яндекс Практикум">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./pages/index.css">
+  </head>
+  <body class="mainpage">
+
+
+    <section class="popup popup_opened" id="myForm">
+      <div class="popup__container">
+        <img class="popup__icon" onclick="closeForm()" src="./image/Close Icon.svg" alt="Крест закрытия формы">
+        <h2 class="popup__title">Редактировать профиль</h2>
+        <input class="popup__subtitle" type="text" name="login" id="login"  value="Жак-Ив Кусто">
+        <input class="popup__craft" type="text" name="login" id="logi"  value="Исследователь океана">
+        <div class="popup__button"><p class="popup__buttontext">Сохранить</p></div>
+      </div>
+    </section>
+    
+    <section class="header">
+      <img class="header__logo" src="./image/VectorRF.svg" alt="Место Россия">
+    </section>
+    <section class="profile">
+      <img class="profile__avatar" src="./image/image.jpg" alt="Мужчина в красной шапке">
+      <div class="profile__info">
+        <h1 class="profile__title">Жак-Ив Кусто</h1>
+        <div class="profile__rectangle" onclick="openForm()"><img src="./image/Vectorricha.svg" alt="Карандаш редактировать профиль"></div>
+        <p class="profile__subtitle">Исследователь океана</p>
+      </div>
+      <div class="profile__addbutton"><img class="profile__plus" src="./image/Vector3.svg" alt="Плюс"></div>
+    </section>
+    <!--Блок картинок-->
+    <section class="elements">
+      <!--Блок картинок1-->
+        <div class="elements__element">
+          <img class="elements__maskgroup" src="./image/kirill-pershin-1088404-unsplash.jpg" alt="Дом в горах">
+          <div class="elements__blok">
+            <h2 class="elements__text">Карачаевск</h2>
+            <img class="elements__image" src="./image/heart.svg" alt="Сердечко">
+          </div>
+        </div>
+      
+      <!--Блок картинок2-->
+        <div class="elements__element">
+          <img class="elements__maskgroup" src="./image/kirill-pershin-1404681-unsplash.png" alt="Закат и горы">
+          <div class="elements__blok">
+            <h2 class="elements__text">Гора Эльбрус</h2>
+            <img class="elements__image" src="./image/heart.svg" alt="Сердечко">
+          </div>
+        </div>
+      
+      <!--Блок картинок3-->
+        <div class="elements__element">
+          <img class="elements__maskgroup" src="./image/kirill-pershin-1556355-unsplash.png" alt="Горы и лес">
+          <div class="elements__blok">
+            <h2 class="elements__text">Домбай</h2>
+            <img class="elements__image" src="./image/heart.svg" alt="Сердечко">
+          </div>
+        </div>
+      
+      <!--Блок картинок4-->
+        <div class="elements__element">
+          <img class="elements__maskgroup" src="./image/kirill-pershin-1404681-unsplash.png" alt="Поле и закат">
+          <div class="elements__blok">
+            <h2 class="elements__text">Гора Эльбрус</h2>
+            <img class="elements__image" src="./image/heart.svg" alt="Сердечко">
+          </div>
+        </div>
+      
+      <!--Блок картинок5-->
+        <div class="elements__element">
+          <img class="elements__maskgroup" src="./image/kirill-pershin-1556355-unsplash.png" alt="Горы и лес">
+          <div class="elements__blok">
+            <h2 class="elements__text">Домбай</h2>
+            <img class="elements__image" src="./image/heart.svg" alt="Сердечко">
+          </div>
+        </div>
+      
+      <!--Блок картинок6-->
+        <div class="elements__element">
+          <img class="elements__maskgroup" src="./image/kirill-pershin-1088404-unsplash.jpg" alt="Дом в горах">
+          <div class="elements__blok">
+            <h2 class="elements__text">Карачаево-Ч...</h2>
+            <img class="elements__image" src="./image/heart.svg" alt="Сердечко">
+          </div>
+        </div>
+      
+    </section>
+    <footer class="footer">
+      <p class="footer__text">© 2020 Mesto Russia</p>
+    </footer>
+    
+    <script src="./javascript/script.js"></script>
+  </body>
+</html>
