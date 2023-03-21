@@ -1,6 +1,5 @@
 .popup__subtitle {
     width: 360px;
-    height: 40px;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
@@ -12,8 +11,11 @@
     margin-top: 35px;
     margin-bottom: -20px;
     margin-left: 36px;
+    padding-top: 13px;
+    padding-bottom: 13px;
     outline: 0px solid transparent;
     border: 0px;
+    border-bottom: 1px solid rgba(84, 84, 84, .7);
 }
 
 .popup__subtitle:focus {

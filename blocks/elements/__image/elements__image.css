@@ -1,0 +1,13 @@
+.elements__image {
+    max-width: 22px;
+    margin-top: 5px;
+    margin-right: 2px;
+}
+
+.elements__image:hover {
+    opacity: 0.5;
+}
+
+.elements__image:active {
+    background-color: #000000;
+}
