@@ -1,10 +1,12 @@
 /*Открытие попапа*//*Открытие попапа*//*Открытие попапа*//*Открытие попапа*//*Открытие попапа*//*Открытие попапа*/
-
 let popupOpen = document.querySelector('.popup');
-
+let profileName = document.querySelector('.profile__title');
+let profileAbout = document.querySelector('.profile__subtitle');
 
 function openOpenPopup() {
   popupOpen.classList.add('popup_opened');
+  nameInput.value = profileName.textContent;
+  jobInput.value = profileAbout.textContent;
 }
 
 let buttonRectangle = document.querySelector('.profile__rectangle');
@@ -25,14 +27,14 @@ let jobInput = formElement.querySelector('#input-worke');
 
 function handleFormSubmit (evt) {
   evt.preventDefault(); 
-  profileName.textContent = nameInput.value;
-  profileAbout.textContent = jobInput.value;
+    profileName.textContent = nameInput.value;
+    profileAbout.textContent = jobInput.value;
+    closeOpenPopup();
 };
 
 formElement.addEventListener('submit', handleFormSubmit); 
 
-let popupBut = document.querySelector('#popup__but');
-popupBut.addEventListener('click', handleFormSubmit);
+
 
 
 
