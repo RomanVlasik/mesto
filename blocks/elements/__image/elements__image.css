@@ -19,6 +19,6 @@
     opacity: 0.5;
 }
 
-.elements__image:active {
-    background-color: #000000;
+.elements__image:focus {
+    background-image: url("../../../image/Union.png");
 }
