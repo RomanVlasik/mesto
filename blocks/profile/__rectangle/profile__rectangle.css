@@ -1,0 +1,25 @@
+.profile__rectangle {
+    width: 24px;
+    height: 24px;
+    background-color: transparent;
+    background-image: url(../../../image/Vectorricha.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: auto 0 5px 18px;
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 1);
+    cursor: pointer;
+}
+
+.profile__rectangle:hover {
+    opacity: 0.6;
+}
+
+@media screen and (max-width: 900px) {
+    .profile__rectangle {
+        background-image: url(../../../image/Mini.svg);
+        width: 18px;
+        height: 18px;
+        margin-left: 10px;
+    }
+}
