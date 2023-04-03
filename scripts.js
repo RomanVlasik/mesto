@@ -168,3 +168,11 @@ element.addEventListener('click', evt => {
   handleCardLike(evt);
 });
 
+/*Функция для удаления по клику на корзинку*//*Функция для удаления по клику на корзинку*//*Функция для удаления по клику на корзинку*//*Функция для удаления по клику на корзинку*/
+function handleRemoveCard(evt) {
+  if (evt.target.classList.contains('element__basket')) {
+    const cardTarget = evt.target.closest('.elements__element');
+  cardTarget.remove();
+  };
+};
+
