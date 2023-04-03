@@ -176,3 +176,10 @@ function handleRemoveCard(evt) {
   };
 };
 
+/*Функция для лайков*//*Функция для лайков*//*Функция для лайков*//*Функция для лайков*//*Функция для лайков*//*Функция для лайков*//*Функция для лайков*//*Функция для лайков*/
+function handleCardLike(evt) {
+  if (evt.target.classList.contains('elements__image')) {
+    evt.target.classList.toggle('elements__imagez');
+  };
+};
+
