@@ -1,0 +1,9 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 19" width="22" height="19">
+	<title>Vector-svg</title>
+	<defs>
+		<image  width="22" height="19" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAATCAMAAACjpw26AAAAAXNSR0IB2cksfwAAADxQTFRFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA0C8mMAAAABR0Uk5TABB/3/+vQGAw75+gwM+A4PCwkHDr2a/RAAAAcElEQVR4nG3P2w6AIAwD0OKKKHj3///VqYQgri9bTpolA+A6IX0PTfCkdO5eh5EaYQSSDk6UQbvjzDcx5kXEYaGRBavFAktJmzfsYtzY0VttfeL463H/k1pNgOFZGy/68Uor/2jxRrOfrT4e/qpe6QWe0gWt4Wc42AAAAABJRU5ErkJggg=="/>
+	</defs>
+	<style>
+	</style>
+	<use id="Layer" href="#img1" x="0" y="0" />
+</svg>
