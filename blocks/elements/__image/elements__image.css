@@ -19,6 +19,20 @@
     opacity: 0.5;
 }
 
-.elements__image:focus {
-    background-image: url("../../../image/Union.png");
+
+.elements__imagez {
+    width: 22px;
+    height: 19px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    background-size: contain;
+    flex: none;
+    box-sizing: content-box;
+    margin: 0;
+    padding: 0;
+    margin-top: 5px;
+    background-image: url("../../../image/blackserdse.svg");
+    border: none;
+    cursor: pointer;
 }
