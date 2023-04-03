@@ -115,3 +115,56 @@ function openPopup (item) {
 function closePopup (item) {
   item.classList.remove('popup_opened');
 };
+
+/*добавление новой карточки*//*добавление новой карточки*//*добавление новой карточки*//*добавление новой карточки*//*добавление новой карточки*//*добавление новой карточки*/
+function handleSubmitAddCard (evt) {
+  evt.preventDefault();
+  const newCardElement = createCard(evt);
+  element.prepend(newCardElement);
+  closePopup(popupAdd);
+};
+
+/*Создание карточки*/
+function createCard (item) {
+  const elementElement = cardTemplate.querySelector('.elements__element').cloneNode(true);
+  elementElement.querySelector('.elements__maskgroup').src = item.link || linkInput.value;
+  elementElement.querySelector('.elements__text').textContent = item.name || placeInput.value;
+  elementElement.querySelector('.elements__maskgroup').alt = item.name || placeInput.value;
+  elementElement.querySelector('.elements__maskgroup').addEventListener('click', function(evt){
+    openImgPopup(evt);
+  });
+  return elementElement;
+};
+
+/*Добавление карточки*/
+function addCard(item) {
+  element.append(item);
+};
+
+/*Рендер карточки*/
+function renderCards () {
+  initialCards.forEach(item => {
+    const cardElement = createCard(item);
+    addCard(cardElement);
+  });
+};
+renderCards();
+
+/*Слушатель открытия попапа добавления карточки*/
+buttonAdd.addEventListener('click', function(){
+  placeInput.value = '';
+  linkInput.value = '';
+  openPopup(popupAdd);
+});
+
+
+/*Слушатель добавления новой карточки*/
+formElementAdd.addEventListener('submit', handleSubmitAddCard);
+
+
+/*Организатор событий по event*/
+element.addEventListener('click', evt => {
+  handleRemoveCard(evt);
+  handleCardLike(evt);
+});
+
