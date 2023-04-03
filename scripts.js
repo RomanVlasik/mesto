@@ -183,3 +183,46 @@ function handleCardLike(evt) {
   };
 };
 
+/*Функция открытие попапа картинки на весь экран*//*Функция открытие попапа картинки на весь экран*//*Функция открытие попапа картинки на весь экран*//*Функция открытие попапа картинки на весь экран*/
+const imageFromPopup = document.querySelector('.popup__image');
+const textFromPopup = document.querySelector('.popup__text');
+const imgPopup = document.querySelector('.popup_img');
+const buttonCloseImage = document.querySelector('.popup__close_icon');
+
+/*Функция открытие попапа картинки на весь экран*/
+function openImgPopup(evt) {
+  createImgPopup(evt);
+  openPopup(imgPopup);
+};
+
+/*Слушатель закрытия попапа картинки на весь экран*/
+buttonCloseImage.addEventListener('click', function() {
+  closePopup(imgPopup);
+});
+
+/*Функция создания попапа с картинками на весь экран*/
+function createImgPopup(evt) {
+  const eTarget = evt.target;
+  imageFromPopup.src = eTarget.src;
+  textFromPopup.textContent = eTarget.alt;
+  imageFromPopup.alt = eTarget.alt;
+};
+
+
+
+
+  
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
