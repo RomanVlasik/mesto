@@ -10,91 +10,62 @@
     <link rel="stylesheet" href="./pages/index.css">
   </head>
   <body class="mainpage">
-
-
-    <section class="popup popup_opened" id="myForm">
+    <!-- Попап Редактировать профиль -->
+    <section class="popup popup_type_edit-profile">
       <div class="popup__container">
-        <img class="popup__icon" onclick="closeForm()" src="./image/Close Icon.svg" alt="Крест закрытия формы">
+        <button class="popup__icon" type="button"></button>
+        <form class="popup__forms" name="profile-form" method="post">
         <h2 class="popup__title">Редактировать профиль</h2>
-        <input class="popup__subtitle" type="text" name="login" id="login"  value="Жак-Ив Кусто">
-        <input class="popup__craft" type="text" name="login" id="logi"  value="Исследователь океана">
-        <div class="popup__button"><p class="popup__buttontext">Сохранить</p></div>
+        <input class="popup__craft" type="text" name="input-name" id="input-name"  value="Жак-Ив Кусто">
+        <input class="popup__craft" type="text" name="input-worke" id="input-worke"  value="Исследователь океана">
+        <button class="popup__button" type="submit" id="popup__but">Сохранить</button>
+        </form>
       </div>
     </section>
-    
-    <section class="header">
-      <img class="header__logo" src="./image/VectorRF.svg" alt="Место Россия">
+    <!--Попап добавления новой кароточки элементов. -->
+    <section class="popup popup_addendum">
+      <div class="popup__container">
+        <button class="popup__icon popup__icon_addendum" type="button"></button>
+        <form class="popup__forms" name="profile-form" method="post" id="form-add">
+        <h2 class="popup__title">Новое место</h2>
+        <input class="popup__craft" type="text" name="input-place" placeholder="Название" id="input-place"  value="Название">
+        <input class="popup__craft" type="text" name="input-link" placeholder="Ссылка на картинку" id="input-link"  value="Ссылка на картинку">
+        <button class="popup__button " type="submit" id="popup__but">Создать</button>
+        </form>
+      </div>
     </section>
+    <!--Контент -->
+    <header class="header">
+      <img class="header__logo" src="./image/VectorRF.svg" alt="Место Россия">
+    </header>
+    <main class="content">
     <section class="profile">
       <img class="profile__avatar" src="./image/image.jpg" alt="Мужчина в красной шапке">
       <div class="profile__info">
+        <div class="profile__rove">
         <h1 class="profile__title">Жак-Ив Кусто</h1>
-        <div class="profile__rectangle" onclick="openForm()"><img src="./image/Vectorricha.svg" alt="Карандаш редактировать профиль"></div>
+        <button class="profile__rectangle" type="button"></button>
+        </div>
         <p class="profile__subtitle">Исследователь океана</p>
       </div>
-      <div class="profile__addbutton"><img class="profile__plus" src="./image/Vector3.svg" alt="Плюс"></div>
+      <button class="profile__addbutton" type="button"></button>
     </section>
-    <!--Блок картинок-->
-    <section class="elements">
-      <!--Блок картинок1-->
-        <div class="elements__element">
-          <img class="elements__maskgroup" src="./image/kirill-pershin-1088404-unsplash.jpg" alt="Дом в горах">
-          <div class="elements__blok">
-            <h2 class="elements__text">Карачаевск</h2>
-            <img class="elements__image" src="./image/heart.svg" alt="Сердечко">
-          </div>
-        </div>
-      
-      <!--Блок картинок2-->
-        <div class="elements__element">
-          <img class="elements__maskgroup" src="./image/kirill-pershin-1404681-unsplash.png" alt="Закат и горы">
-          <div class="elements__blok">
-            <h2 class="elements__text">Гора Эльбрус</h2>
-            <img class="elements__image" src="./image/heart.svg" alt="Сердечко">
-          </div>
-        </div>
-      
-      <!--Блок картинок3-->
-        <div class="elements__element">
-          <img class="elements__maskgroup" src="./image/kirill-pershin-1556355-unsplash.png" alt="Горы и лес">
-          <div class="elements__blok">
-            <h2 class="elements__text">Домбай</h2>
-            <img class="elements__image" src="./image/heart.svg" alt="Сердечко">
-          </div>
-        </div>
-      
-      <!--Блок картинок4-->
-        <div class="elements__element">
-          <img class="elements__maskgroup" src="./image/kirill-pershin-1404681-unsplash.png" alt="Поле и закат">
-          <div class="elements__blok">
-            <h2 class="elements__text">Гора Эльбрус</h2>
-            <img class="elements__image" src="./image/heart.svg" alt="Сердечко">
-          </div>
-        </div>
-      
-      <!--Блок картинок5-->
-        <div class="elements__element">
-          <img class="elements__maskgroup" src="./image/kirill-pershin-1556355-unsplash.png" alt="Горы и лес">
-          <div class="elements__blok">
-            <h2 class="elements__text">Домбай</h2>
-            <img class="elements__image" src="./image/heart.svg" alt="Сердечко">
-          </div>
-        </div>
-      
-      <!--Блок картинок6-->
-        <div class="elements__element">
-          <img class="elements__maskgroup" src="./image/kirill-pershin-1088404-unsplash.jpg" alt="Дом в горах">
-          <div class="elements__blok">
-            <h2 class="elements__text">Карачаево-Ч...</h2>
-            <img class="elements__image" src="./image/heart.svg" alt="Сердечко">
-          </div>
-        </div>
-      
+    <section class="elements" id="elements__id">
     </section>
+  <template id="elements__element">
+    <div class="elements__element">
+      <img class="elements__maskgroup">
+      <button class="element__basket" type="button" id="element__basket"></button>
+      <div class="elements__blok">
+        <h2 class="elements__text"></h2>
+        <button class="elements__image" type="button"></button>
+      </div>
+    </div>
+  </template>
+  </main>
     <footer class="footer">
       <p class="footer__text">© 2020 Mesto Russia</p>
     </footer>
-    
-    <script src="./javascript/script.js"></script>
+    <script src="./scripts/scripts.js"></script>
   </body>
 </html>
