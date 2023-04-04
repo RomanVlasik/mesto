@@ -13,35 +13,35 @@
     <!-- Попап Редактировать профиль -->
     <section class="popup popup_type_edit-profile">
       <div class="popup__container">
-        <button class="popup__icon" type="button"></button>
-        <form class="popup__forms" name="profile-form" method="post">
+        <button class="popup__icon" type="button" ></button>
+        <form class="popup__forms" name="profile-form" method="post" id="form-edit">
         <h2 class="popup__title">Редактировать профиль</h2>
-        <input class="popup__craft" type="text" name="input-name" id="input-name"  value="Жак-Ив Кусто">
-        <input class="popup__craft" type="text" name="input-worke" id="input-worke"  value="Исследователь океана">
+        <input class="popup__craft" type="text" name="input-name" id="input-name">
+        <input class="popup__craft" type="text" name="input-worke" id="input-worke">
         <button class="popup__button" type="submit" id="popup__but">Сохранить</button>
         </form>
       </div>
     </section>
-  <!-- Попап открытия картинки на весь экран -->
-  <div class="popup popup_img">
-    <div class="popup__img-container">
-        <img class="popup__image">
-        <p class="popup__text"></p>
-        <button class="popup__icon popup__close_icon" type="button"></button>
-    </div>
-</div>
-    <!--Попап добавления новой кароточки элементов. -->
-    <section class="popup popup_addendum">
+     <!--Попап добавления новой кароточки элементов. -->
+     <section class="popup popup_type_add-card">
       <div class="popup__container">
         <button class="popup__icon popup__icon_addendum" type="button"></button>
         <form class="popup__forms" name="profile-form" method="post" id="form-add">
         <h2 class="popup__title">Новое место</h2>
-        <input class="popup__craft" type="text" name="input-place" placeholder="Название" id="input-place"  value="Название">
-        <input class="popup__craft" type="text" name="input-link" placeholder="Ссылка на картинку" id="input-link"  value="Ссылка на картинку">
-        <button class="popup__button " type="submit" id="popup__but">Создать</button>
+        <input class="popup__craft" type="text" name="input-place" placeholder="Название" id="input-place">
+        <input class="popup__craft" type="text" name="input-link" placeholder="Ссылка на картинку" id="input-link">
+        <button class="popup__button " type="submit" id="popup__butt">Создать</button>
         </form>
       </div>
     </section>
+  <!-- Попап открытия картинки на весь экран -->
+  <div class="popup popup_image_magnification-fullscreen">
+    <div class="popup__img-container">
+        <img class="popup__image">
+        <p class="popup__text"></p>
+        <button class="popup__icon popup__close" type="button"></button>
+    </div>
+</div>
     <!--Контент -->
     <header class="header">
       <img class="header__logo" src="./image/VectorRF.svg" alt="Место Россия">
