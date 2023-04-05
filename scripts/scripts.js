@@ -10,9 +10,9 @@ const profileName = document.querySelector('.profile__title');
 const profileAbout = document.querySelector('.profile__subtitle');
 const buttonRectangle = document.querySelector('.profile__rectangle');
 const buttonPopupicon = document.querySelector('.popup__icon');
-const redoctProfile = document.querySelector('#form-edit');
-const nameInput = redoctProfile.querySelector('#input-name');
-const jobInput = redoctProfile.querySelector('#input-worke');
+const editProfile = document.querySelector('#form-edit');
+const nameInput = editProfile.querySelector('#input-name');
+const jobInput = editProfile.querySelector('#input-worke');
 const addendum = document.querySelector('.popup_type_add-card');
 const buttonaddbutton = document.querySelector('.profile__addbutton');
 const buttonPopupIconAddendum = document.querySelector('.popup__icon_addendum');
@@ -23,7 +23,7 @@ const imageFromPopup = document.querySelector('.popup__image');
 const textFromPopup = document.querySelector('.popup__text');
 const buttonCloseImage = document.querySelector('.popup__close');
 const formElementEdit = document.querySelector('#form-edit');
-const elementsMaskgroup = elementElement.querySelector('.elements__maskgroup');
+
 
 
 /*Массив карточек JS*/
@@ -65,14 +65,14 @@ function closePopup (item) {
 };
 
 /*Изменение имени и профессии*/
-function openOpenPopup(evt) {
+function handleSubmitProfileForm(evt) {
   evt.preventDefault();
   profileName.textContent = nameInput.value;
   profileAbout.textContent = jobInput.value;
   closePopup(profilePopup);
 }
 /*Слушатель Изменение имени и профессии*/
-formElementEdit.addEventListener('submit', openOpenPopup);
+formElementEdit.addEventListener('submit', handleSubmitProfileForm);
 
 /*Открытие формы редактирования*/
 buttonRectangle.addEventListener('click', function () {
@@ -95,35 +95,42 @@ function handleFormSubmit (evt) {
 };
 
 /*слушатель формы отправки на сервер*/
-redoctProfile.addEventListener('submit', handleFormSubmit); 
+editProfile.addEventListener('submit', handleFormSubmit); 
 
 /*Открытие добавление карточки*/
-function openaddendum() {
-  addendum.classList.add('popup_opened');
+function openAddendum() {
   nameInput.value = profileName.textContent;
   jobInput.value = profileAbout.textContent;
+  openPopup(cardPopup);
 }
 
 /* Слушатель Открытие добавление карточки*/
-buttonaddbutton.addEventListener('click', openaddendum);
+buttonaddbutton.addEventListener('click', openAddendum);
 
 /*Закрытие добавление карточки*/
-function closeaddendum() {
-  addendum.classList.remove('popup_opened');
+function closeAddendum() {
+  closePopup(cardPopup);
 }
 
 /*Слушатель Закрытие добавление карточки*/
-buttonPopupIconAddendum.addEventListener('click', closeaddendum);
+buttonPopupIconAddendum.addEventListener('click', closeAddendum);
 
 /*добавление новой карточки*/
+/*Здесь надеюсь верно исправил если нет то я не понимаю ,что сюда подставить*/
+/*Жду help me*/
 function handleSubmitAddCard (evt) {
   evt.preventDefault();
-  const newCardElement = createCard(evt);
+  const newCardElement = createCard(initialCards);
   element.prepend(newCardElement);
   closePopup(cardPopup);
 };
 
+const elemeMask = elementElement.querySelector('.elements__maskgroup');
+
 /*Создание карточки*/
+/*Если я удаляю linkInput.value и т.д добавление карточек становиться неправильно,а как сделать я не знаю в пачке ответа не дают */
+/*Когда я заменяю elementElement.querySelector('.elements__maskgroup') на константу выше elemeMask верстка работает некорректно*/
+/*Жду help me*/
 function createCard (item) {
   const elementElement = cardTemplate.querySelector('.elements__element').cloneNode(true);
   elementElement.querySelector('.elements__maskgroup').src = item.link || linkInput.value;
