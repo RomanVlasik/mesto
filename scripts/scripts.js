@@ -10,9 +10,9 @@ const profileName = document.querySelector('.profile__title');
 const profileAbout = document.querySelector('.profile__subtitle');
 const buttonRectangle = document.querySelector('.profile__rectangle');
 const buttonPopupicon = document.querySelector('.popup__icon');
-const editProfile = document.querySelector('#form-edit');
-const nameInput = editProfile.querySelector('#input-name');
-const jobInput = editProfile.querySelector('#input-worke');
+const sendingDataServer = document.querySelector('#form-edit');
+const nameInput = sendingDataServer.querySelector('#input-name');  
+const jobInput = sendingDataServer.querySelector('#input-worke');
 const addendum = document.querySelector('.popup_type_add-card');
 const buttonaddbutton = document.querySelector('.profile__addbutton');
 const buttonPopupIconAddendum = document.querySelector('.popup__icon_addendum');
@@ -95,7 +95,7 @@ function handleFormSubmit (evt) {
 };
 
 /*слушатель формы отправки на сервер*/
-editProfile.addEventListener('submit', handleFormSubmit); 
+sendingDataServer.addEventListener('submit', handleFormSubmit); 
 
 /*Открытие добавление карточки*/
 function openAddendum() {
@@ -115,28 +115,28 @@ function closeAddendum() {
 /*Слушатель Закрытие добавление карточки*/
 buttonPopupIconAddendum.addEventListener('click', closeAddendum);
 
+/*Все работает спасибо вы лучший*//*Все работает спасибо вы лучший*//*Все работает спасибо вы лучший*//*Все работает спасибо вы лучший*//*Все работает спасибо вы лучший*//*Все работает спасибо вы лучший*/
 /*добавление новой карточки*/
-/*Здесь надеюсь верно исправил если нет то я не понимаю ,что сюда подставить*/
-/*Жду help me*/
 function handleSubmitAddCard (evt) {
   evt.preventDefault();
-  const newCardElement = createCard(initialCards);
+  const newCardItem = {
+    link: linkInput.value,
+    name: placeInput.value
+  } 
+  const newCardElement = createCard(newCardItem);
   element.prepend(newCardElement);
   closePopup(cardPopup);
 };
 
-const elemeMask = elementElement.querySelector('.elements__maskgroup');
-
 /*Создание карточки*/
-/*Если я удаляю linkInput.value и т.д добавление карточек становиться неправильно,а как сделать я не знаю в пачке ответа не дают */
-/*Когда я заменяю elementElement.querySelector('.elements__maskgroup') на константу выше elemeMask верстка работает некорректно*/
-/*Жду help me*/
 function createCard (item) {
   const elementElement = cardTemplate.querySelector('.elements__element').cloneNode(true);
-  elementElement.querySelector('.elements__maskgroup').src = item.link || linkInput.value;
-  elementElement.querySelector('.elements__text').textContent = item.name || placeInput.value;
-  elementElement.querySelector('.elements__maskgroup').alt = item.name || placeInput.value;
-  elementElement.querySelector('.elements__maskgroup').addEventListener('click', function(evt){
+  const cardImage = elementElement.querySelector('.elements__maskgroup');
+  cardImage.src = item.link;
+  elementElement.querySelector('.elements__text').textContent = item.name;
+  cardImage.alt = item.name;
+  cardImage.addEventListener('click', () => openimagePopup(item));
+  cardImage.addEventListener('click', function(evt){
     openimagePopup(evt);
   });
   return elementElement;
