@@ -1,0 +1,4 @@
+.popup__button_type_inactive {
+    opacity: .2;
+    pointer-events: none;
+}
