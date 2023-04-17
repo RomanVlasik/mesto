@@ -23,7 +23,7 @@ const imageFromPopup = document.querySelector('.popup__image');
 const textFromPopup = document.querySelector('.popup__text');
 const buttonCloseImage = document.querySelector('.popup__close');
 const formElementEdit = document.querySelector('#form-edit');
-
+const popupContainer = document.querySelectorAll('#popup-container');
 
 
 /*Массив карточек JS*/
@@ -205,6 +205,25 @@ function createimagePopup(evt) {
   textFromPopup.textContent = eTarget.alt;
   imageFromPopup.alt = eTarget.alt;
 };
+
+// Функции для закрытия попапов по оверлею или по Esc /*Смотрим */
+popupContainer.forEach((button) => {
+  const popup = button.closest('.popup');
+  document.addEventListener('keydown', (evt) => {
+    if (evt.key === 'Escape') {
+      closePopup(popup);
+    }
+  });
+});
+
+popupContainer.forEach((item) => {
+  const popup = item.closest('.popup');
+  popup.addEventListener('click', (evt) => {
+    if (evt.currentTarget === evt.target) {
+      closePopup(popup);
+    }
+  });
+});
 
 
 
