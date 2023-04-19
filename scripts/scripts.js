@@ -14,7 +14,7 @@ const sendingDataServer = document.querySelector('#form-edit');
 const nameInput = sendingDataServer.querySelector('#input-name');  
 const jobInput = sendingDataServer.querySelector('#input-worke');
 const addendum = document.querySelector('.popup_type_add-card');
-const buttonaddbutton = document.querySelector('.profile__addbutton');
+const buttonAddButton = document.querySelector('.profile__addbutton');
 const buttonPopupIconAddendum = document.querySelector('.popup__icon_addendum');
 const cardTemplate = document.querySelector('#elements__element').content;
 const element = document.querySelector('#elements__id');
@@ -23,7 +23,9 @@ const imageFromPopup = document.querySelector('.popup__image');
 const textFromPopup = document.querySelector('.popup__text');
 const buttonCloseImage = document.querySelector('.popup__close');
 const formElementEdit = document.querySelector('#form-edit');
-const popupContainer = document.querySelectorAll('#popup-container');
+/*В данном случае если я использую document.querySelector вместо  document.querySelectorAll верстка работает неккоректно
+и когда открываешь картинку на весь экран,то она не закрывается кликом на оверлей*/
+const popupContainer = document.querySelectorAll('#popup-containerr');
 
 
 /*Массив карточек JS*/
@@ -105,7 +107,7 @@ function openAddendum() {
 }
 
 /* Слушатель Открытие добавление карточки*/
-buttonaddbutton.addEventListener('click', openAddendum);
+buttonAddButton.addEventListener('click', openAddendum);
 
 /*Закрытие добавление карточки*/
 function closeAddendum() {
@@ -115,7 +117,6 @@ function closeAddendum() {
 /*Слушатель Закрытие добавление карточки*/
 buttonPopupIconAddendum.addEventListener('click', closeAddendum);
 
-/*Все работает спасибо вы лучший*//*Все работает спасибо вы лучший*//*Все работает спасибо вы лучший*//*Все работает спасибо вы лучший*//*Все работает спасибо вы лучший*//*Все работает спасибо вы лучший*/
 /*добавление новой карточки*/
 function handleSubmitAddCard (evt) {
   evt.preventDefault();
@@ -135,10 +136,7 @@ function createCard (item) {
   cardImage.src = item.link;
   elementElement.querySelector('.elements__text').textContent = item.name;
   cardImage.alt = item.name;
-  cardImage.addEventListener('click', () => openimagePopup(item));
-  cardImage.addEventListener('click', function(evt){
-    openimagePopup(evt);
-  });
+  cardImage.addEventListener('click', (evt) => openimagePopup(evt));
   return elementElement;
 };
 
@@ -205,19 +203,20 @@ function createimagePopup(evt) {
   textFromPopup.textContent = eTarget.alt;
   imageFromPopup.alt = eTarget.alt;
 };
-
+/*Не понимаю как сделать,по другому не выходит не работает,скажите как?*/
 // Функции для закрытия попапов по оверлею или по Esc /*Смотрим */
 popupContainer.forEach((button) => {
   const popup = button.closest('.popup');
   document.addEventListener('keydown', (evt) => {
     if (evt.key === 'Escape') {
       closePopup(popup);
+      closePopup(cardPopup);
+      closePopup(profilePopup);
     }
   });
 });
 
-popupContainer.forEach((item) => {
-  const popup = item.closest('.popup');
+document.querySelectorAll('.popup').forEach((popup) => { 
   popup.addEventListener('click', (evt) => {
     if (evt.currentTarget === evt.target) {
       closePopup(popup);

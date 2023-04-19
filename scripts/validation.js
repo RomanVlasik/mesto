@@ -34,7 +34,7 @@ const showInputError = (formElement, inputElement, errorMessage) => {
       hideInputError(formElement, inputElement);
     }
   };
-
+/*Как сделать ,чтобы при добавлении новой карточки за другой форма была неактивна я не понимаю*/
   const toggleButtonState = (inputList, buttonElement) => {
     if (hasInvalidInput(inputList)) {
       buttonElement.classList.add('popup__button_type_inactive');
@@ -57,7 +57,7 @@ const showInputError = (formElement, inputElement, errorMessage) => {
       });
     });
   };
-  
+  /*Можно подробнее ,как исправить эту ошибку не понимаю*/
   const enableValidation = () => {
     const formList = Array.from(document.querySelectorAll('.popup__forms'));
     formList.forEach((formElement) => {
@@ -66,7 +66,7 @@ const showInputError = (formElement, inputElement, errorMessage) => {
       });
       
       
-      const fieldsetList = Array.from(formElement.querySelectorAll('.popup__set'));
+      const fieldsetList = Array.from(document.querySelectorAll('.popup__forms'));
       fieldsetList.forEach((fieldSet) => {
         setEventListeners(fieldSet);
       });
