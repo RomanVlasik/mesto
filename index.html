@@ -15,7 +15,6 @@
       <div class="popup__container" id="popup-container">
         <button class="popup__icon" type="button" ></button>
         <form class="popup__forms" name="profile-form" method="post" id="form-edit" novalidate>
-        <fieldset class="popup__set">
         <h2 class="popup__title">Редактировать профиль</h2>  <!--!!!!!!!!!!!!!-->
         <label class="popup__field">
         <input class="popup__craft " type="text" name="input-name" placeholder="Имя" id="input-name" required minlength="2" maxlength="40">
@@ -26,16 +25,14 @@
         <span class="popup__input-error input-worke-error"></span>
         </label>
         <button class="popup__button" type="submit" id="popup__but">Сохранить</button>
-      </fieldset>
         </form>
       </div>
     </section>
      <!--Попап добавления новой кароточки элементов. -->
      <section class="popup popup_type_add-card">
-      <div class="popup__container" id="popup-container">
+      <div class="popup__container" id="popup-containerd">
         <button class="popup__icon popup__icon_addendum" type="button"></button>
-        <form class="popup__forms" name="profile-form" method="post" id="form-add">
-          <fieldset class="popup__set">
+        <form class="popup__forms" name="profile-form" method="post" id="form-add" novalidate>
         <h2 class="popup__title">Новое место</h2>
         <label class="popup__field">
         <input class="popup__craft" type="text" name="input-place" placeholder="Название" id="input-place" required minlength="2" maxlength="30">
@@ -46,13 +43,12 @@
         <span class="popup__input-error input-link-error"></span>
       </label>
         <button class="popup__button popup__button_type_inactive " type="submit" id="popup__butt">Создать</button>
-      </fieldset>
         </form>
       </div>
     </section>
   <!-- Попап открытия картинки на весь экран -->
   <div class="popup popup_image_magnification-fullscreen">
-    <div class="popup__img-container" id="popup-container">
+    <div class="popup__img-container" id="popup-containerr">
         <img class="popup__image">
         <p class="popup__text"></p>
         <button class="popup__icon popup__close" type="button"></button>
