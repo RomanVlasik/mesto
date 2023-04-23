@@ -23,10 +23,6 @@ const imageFromPopup = document.querySelector('.popup__image');
 const textFromPopup = document.querySelector('.popup__text');
 const buttonCloseImage = document.querySelector('.popup__close');
 const formElementEdit = document.querySelector('#form-edit');
-/*В данном случае если я использую document.querySelector вместо  document.querySelectorAll верстка работает неккоректно
-и когда открываешь картинку на весь экран,то она не закрывается кликом на оверлей*/
-const popupContainer = document.querySelectorAll('#popup-containerr');
-
 
 /*Массив карточек JS*/
 const initialCards = [
@@ -59,11 +55,13 @@ const initialCards = [
 /*открытие попапа*/
 function openPopup (item) {
   item.classList.add('popup_opened');
+  document.addEventListener('keydown', closeByEsc);
 };
 
 /*закрытие попапа*/
 function closePopup (item) {
   item.classList.remove('popup_opened');
+  document.addEventListener('keydown', closeByEsc);
 };
 
 /*Изменение имени и профессии*/
@@ -140,6 +138,7 @@ function createCard (item) {
   return elementElement;
 };
 
+
 /*Добавление карточки*/
 function addCard(item) {
   element.append(item);
@@ -203,19 +202,16 @@ function createimagePopup(evt) {
   textFromPopup.textContent = eTarget.alt;
   imageFromPopup.alt = eTarget.alt;
 };
-/*Не понимаю как сделать,по другому не выходит не работает,скажите как?*/
-// Функции для закрытия попапов по оверлею или по Esc /*Смотрим */
-popupContainer.forEach((button) => {
-  const popup = button.closest('.popup');
-  document.addEventListener('keydown', (evt) => {
-    if (evt.key === 'Escape') {
-      closePopup(popup);
-      closePopup(cardPopup);
-      closePopup(profilePopup);
-    }
-  });
-});
 
+/*Функции для закрытия попапов по Esc*/
+function closeByEsc(evt) {
+  if (evt.key === 'Escape') {
+    const openedPopup = document.querySelector('.popup_opened');
+    closePopup(openedPopup); 
+  }
+} 
+
+// Функции для закрытия попапов по оверлею
 document.querySelectorAll('.popup').forEach((popup) => { 
   popup.addEventListener('click', (evt) => {
     if (evt.currentTarget === evt.target) {
@@ -223,6 +219,9 @@ document.querySelectorAll('.popup').forEach((popup) => {
     }
   });
 });
+
+
+
 
 
 

@@ -2,22 +2,22 @@ const checkingValidation = {
   formSelector: '.popup__forms',
   inputSelector: '.popup__craft',
   submitButtonSelector: '.popup__button',
-  inactiveButtonClass: '.popup__button_type_inactive',
-  inputErrorClass: '.popup__craft_type_error',
-  errorClass: '.popup__input-error_type_active'
+  inactiveButtonClass: 'popup__button_type_inactive',
+  inputErrorClass: 'popup__craft_type_error',
+  errorClass: 'popup__input-error_type_active'
 };
 
-const showInputError = (formElement, inputElement, errorMessage) => {
+const showInputError = (formElement, inputElement, errorMessage, checkingValidation) => {
     const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
-    inputElement.classList.add('popup__craft_type_error');
+    inputElement.classList.add(checkingValidation.inputErrorClass);
     errorElement.textContent = errorMessage;
-    errorElement.classList.add('popup__input-error_type_active');
+    errorElement.classList.add(checkingValidation.errorClass);
   };
   
-  const hideInputError = (formElement, inputElement) => {
+  const hideInputError = (formElement, inputElement, checkingValidation) => {
     const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
-    inputElement.classList.remove('popup__craft_type_error');
-    errorElement.classList.remove('popup__input-error_type_active');
+    inputElement.classList.remove(checkingValidation.inputErrorClass);
+    errorElement.classList.remove(checkingValidation.errorClass);
     errorElement.textContent = '';
   };
 
@@ -29,48 +29,47 @@ const showInputError = (formElement, inputElement, errorMessage) => {
 
   const checkInputValidity = (formElement, inputElement) => {
     if (!inputElement.validity.valid) {
-      showInputError(formElement, inputElement, inputElement.validationMessage);
+      showInputError(formElement, inputElement, inputElement.validationMessage, checkingValidation);
     } else {
-      hideInputError(formElement, inputElement);
+      hideInputError(formElement, inputElement, checkingValidation);
     }
   };
 /*Как сделать ,чтобы при добавлении новой карточки за другой форма была неактивна я не понимаю*/
-  const toggleButtonState = (inputList, buttonElement) => {
+  const toggleButtonState = (inputList, buttonElement, checkingValidation) => {
     if (hasInvalidInput(inputList)) {
-      buttonElement.classList.add('popup__button_type_inactive');
+      buttonElement.classList.add(checkingValidation.inactiveButtonClass);
       buttonElement.disabled = true;
     }
     else {
-       buttonElement.classList.remove('popup__button_type_inactive');
+       buttonElement.classList.remove(checkingValidation.inactiveButtonClass);
        buttonElement.disabled = false;
     }
   };
   
-  const setEventListeners = (formElement) => {
-    const inputList = Array.from(formElement.querySelectorAll('.popup__craft'));
-    const buttonElement = formElement.querySelector('.popup__button');
-    toggleButtonState(inputList, buttonElement);
+  const setEventListeners = (formElement, checkingValidation) => {
+    const inputList = Array.from(formElement.querySelectorAll(checkingValidation.inputSelector));
+    const buttonElement = formElement.querySelector(checkingValidation.submitButtonSelector);
+    toggleButtonState(inputList, buttonElement, checkingValidation);
     inputList.forEach((inputElement) => {
       inputElement.addEventListener('input', function () {
-        checkInputValidity(formElement, inputElement);
-        toggleButtonState(inputList, buttonElement);
+        checkInputValidity(formElement, inputElement, checkingValidation);
+        toggleButtonState(inputList, buttonElement, checkingValidation);
       });
     });
   };
   /*Можно подробнее ,как исправить эту ошибку не понимаю*/
-  const enableValidation = () => {
-    const formList = Array.from(document.querySelectorAll('.popup__forms'));
-    formList.forEach((formElement) => {
-      formElement.addEventListener('submit', function (evt) {
-        evt.preventDefault();
-      });
-      
-      
-      const fieldsetList = Array.from(document.querySelectorAll('.popup__forms'));
-      fieldsetList.forEach((fieldSet) => {
-        setEventListeners(fieldSet);
+  const enableValidation = (checkingValidation) => {
+    const formList = Array.from(document.querySelectorAll(checkingValidation.formSelector));
+    formList.forEach(() => {
+      const operabilityForm = Array.from(document.querySelectorAll(checkingValidation.formSelector));
+      operabilityForm.forEach((fieldSet) => {
+        setEventListeners(fieldSet, checkingValidation);
       });
     });
   };
   
-  enableValidation(checkingValidation);
+  enableValidation(checkingValidation);/* *//* *//* *//* *//* *//* *//* *//* *//* *//* *//* *//* *//* *//* */
+
+  formElement.addEventListener('reset', () => {
+    // тут нужно вызвать твою функцию изменения состояние кнопки
+  })
