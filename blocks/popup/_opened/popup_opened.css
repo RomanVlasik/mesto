@@ -1,10 +1,4 @@
 .popup_opened {
-    display: flex;
-    opacity: 0;
-    animation: ani 0.5s forwards;
+  visibility: visible;
+  opacity: 1;
 }
-
-  @keyframes ani {
-    0% {opacity: 0;}
-    100% {opacity: 1;}
-  }
